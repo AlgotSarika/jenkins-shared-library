@@ -1,9 +1,15 @@
 def call(Map configMap){
  pipeline {
-    agent { label 'AGENT-1'}
+    agent { label 'AGENT-1' }
     environment { 
-        greeting = configMap.get('greeting')''
+        PROJECT = 'expense'
+        COMPONENT = 'backend'
+        appVersion = ''
+        ACC_ID = '879381244178'
     }
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 30, unit: 'MINUTES')
 
      options {
         disableConcurrentBuilds()
