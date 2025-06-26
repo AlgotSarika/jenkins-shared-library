@@ -2,8 +2,8 @@ def call(Map configMap){
     pipeline {
         agent { label 'AGENT-1' }
         environment { 
-            PROJECT = configMap.get('project')
-            COMPONENT = configMap.get('component')
+            PROJECT = expense
+            COMPONENT = backend
             appVersion = ''
             ACC_ID = '879381244178'
         }
