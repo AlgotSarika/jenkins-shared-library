@@ -9,10 +9,6 @@ def call(Map configMap){
     options {
         disableConcurrentBuilds()
         timeout(time: 30, unit: 'MINUTES')
-
-     options {
-        disableConcurrentBuilds()
-        timeout(time: 30, unit: 'MINUTES')
     }
 
     parameters{
