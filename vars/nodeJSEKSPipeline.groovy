@@ -15,12 +15,22 @@ def call(Map configMap){
             booleanParam(name: 'deploy', defaultValue: false, description: 'Toggle this value')
         }
         stages {
-            stage('print greeting') {
+            stage('Read Version') {
                 steps {
-                  script{
-                    
-                    echo "Version is: $greeting"
-                  }
+                script{
+                    def packageJson = readJSON file: 'package.json'
+                    appVersion = packageJson.version
+                    echo "Version is: $appVersion"
+                }
+                }
+            }
+            stage('Install Dependencies') {
+                steps {
+                script{ 
+                    sh """
+                        npm install
+                    """
+                }
                 }
             }
             
