@@ -70,5 +70,5 @@ def call(Map configMap){
             echo 'This session runs when pipeline success'
         }
     }
-}
+
 }
