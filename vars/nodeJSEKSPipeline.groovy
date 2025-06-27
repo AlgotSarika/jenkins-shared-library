@@ -33,6 +33,16 @@ def call(Map configMap){
                 }
                 }
             }
+
+            stage('Unit test'){
+                steps {
+                    script{ 
+                        sh """
+                            echo "Unit tests are created by developers, we will configure the command like npm test"
+                        """
+                    }
+                }
+            }
             
             /* stage('Run Sonarqube') {
                 environment {
